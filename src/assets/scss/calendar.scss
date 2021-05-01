@@ -33,4 +33,80 @@
       }
     }
   }
+
+  &__body{
+    .row{
+      display: flex;
+      cursor: pointer;
+      &:first-child{
+        cursor: initial;
+        .box{
+          font-weight: bold;
+          &:hover > .text{
+            background-color: white;
+          }
+        }
+      }
+      .box{
+
+        button {
+          border: none;
+          background: none;
+        }
+
+        position: relative;
+        display: inline-flex;
+        width: calc(100%/7);
+        height: 0;
+        padding-bottom: calc(100%/7);
+        font-size: 12pt;
+
+        // Sunday color
+        &:first-child{
+          button {
+            color: red;
+          }
+        }
+
+        //saturday color
+        &:last-child{
+          button {
+            color: #588dff;
+          }
+        }
+
+        // other months
+        &.grayed{
+          button {
+            color: gray;
+          }
+        }
+
+        &:hover{
+          .text{
+            background-color: rgba(#588dff, 0.1);
+          }
+        }
+
+        &.selected{
+          .text{
+            background-color: #588dff;
+            color: white;
+          }
+        }
+        .text{
+          border-radius: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: 60%;
+          height: 60%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
+  }
 }
